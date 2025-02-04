@@ -1,0 +1,12 @@
+class Solution:
+    def maxSubArraySum(self, arr):
+        # Your code here
+        meh=0
+        msf=float('-inf')
+        for i in  arr:
+            meh+=i
+            if msf<meh:
+                msf=meh
+            if meh<0:
+                meh=0
+        return msf
