@@ -1,0 +1,13 @@
+class Solution:
+	def least_average(self, nums, k):
+		# Code here
+		min_sum=sum(nums[:k])
+		min_idx=0
+		cs=min_sum
+		for i in range(k,len(nums)):
+		    cs+=nums[i]-nums[i-k]
+		    if cs<min_sum:
+		        min_sum=cs
+		        min_idx=i
+		        
+		return min_idx+1
