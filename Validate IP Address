@@ -1,0 +1,13 @@
+class Solution:
+    def isValid(self, s):
+        parts=s.split('.')
+        if len(parts)!=4:
+            return False
+        for i in parts:
+            if not i.isdigit():
+                return False
+            if not (0<=int(i)<=255):
+                return False
+            if i!='0' and i[0]=='0':
+                return False
+        return True
