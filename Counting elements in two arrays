@@ -1,0 +1,19 @@
+class Solution:
+    # Function to count elements in a that are less than or equal to each element in b
+    def countEleLessThanOrEqual(self, a, b):
+        # code here
+        def bs(b,num):
+            i=0
+            j=len(b)
+            while i<j:
+                m=(i+j)//2
+                if b[m]<=num:
+                    i=m+1
+                else:
+                    j=m
+            return i
+        b.sort()
+        res=[]
+        for num in a:
+            res.append(bs(b,num))
+        return res
