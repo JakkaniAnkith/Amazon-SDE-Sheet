@@ -1,0 +1,13 @@
+class Solution:
+    def maxSubarraySum(self, arr):
+        # Code here
+        msf=float("-inf")
+        meh=0
+        for i in arr:
+            meh+=i
+            if meh>msf:
+                msf=meh
+            if meh<0:
+                meh=0
+        return msf
+                
